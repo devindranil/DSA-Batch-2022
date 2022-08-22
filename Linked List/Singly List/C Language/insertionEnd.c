@@ -13,7 +13,7 @@ void addLast(struct node **head, int val)
     //create a new node
     struct node *newNode = malloc(sizeof(struct node));
     newNode->data = val;
-    newNode->next     = NULL;
+    newNode->next = NULL;
 
     //if head is NULL, it is an empty list
     if(*head == NULL)
@@ -21,16 +21,16 @@ void addLast(struct node **head, int val)
     //Otherwise, find the last node and add the newNode
     else
     {
-        struct node *lastNode = *head;
-
+        struct node *ptr = *head;
+ 
         //last node's next address will be NULL.
-        while(lastNode->next != NULL)
+        while(ptr->next != NULL)
         {
-            lastNode = lastNode->next;
+            ptr = ptr->next;
         }
 
         //add the newNode at the end of the linked list
-        lastNode->next = newNode;
+        ptr->next = newNode;
     }
 
 }
